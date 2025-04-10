@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 Mental Health EHRs of 2025</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .container {
+            display: flex;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .back-button svg {
+            margin-right: 8px;
+        }
+        
+        .header {
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .published-date {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        
+        .header-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            width: 25%;
+            min-width: 250px;
+            padding-right: 30px;
+        }
+        
+        .sidebar-title {
+            color: #aaa;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+        
+        .sidebar-nav {
+            position: sticky;
+            top: 20px;
+        }
+        
+        .sidebar-nav ul {
+            list-style: none;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-nav a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.2s;
+        }
+        
+        .sidebar-nav a:hover {
+            color: #4CAF50;
+        }
+        
+        .sidebar-nav a.active {
+            color: #4CAF50;
+            font-weight: 500;
+        }
+        
+        .numbered-item {
+            margin-left: 20px;
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            width: 75%;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .section h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin: 30px 0 15px;
+            font-weight: 600;
+        }
+        
+        .section p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #444;
+        }
+        
+        .section ul, .section ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .section li {
+            margin-bottom: 10px;
+        }
+        
+        /* Product sections */
+        .product {
+            margin: 30px 0;
+            padding-bottom: 30px;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .product-features {
+            margin: 20px 0;
+        }
+        
+        .advantages-limitations {
+            margin: 20px 0;
+        }
+        
+        .advantages-limitations h4 {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .nested-list {
+            margin-left: 25px;
+        }
+        
+        .price-emphasis {
+            font-weight: bold;
+        }
+        
+        .rating {
+            font-weight: bold;
+            color: #4CAF50;
+            margin-top: 10px;
+        }
+        
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+        }
+        
+        /* Social sharing links */
+        .social-share {
+            display: flex;
+            gap: 10px;
+            margin-top: 40px;
+        }
+        
+        .social-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Chat icon */
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+        }
+        
+        .chat-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                min-width: 0;
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .main-content {
+                width: 100%;
+            }
+            
+            .sidebar-nav {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-nav">
+                <div class="sidebar-title">Contents</div>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#summary">60 Second Summary</a></li>
+                    <li><a href="#why-look">Why Look for a Mental Health EHR?</a></li>
+                    <li><a href="#what-to-look">What to Look for in a Mental Health EHR?</a></li>
+                    <li><a href="#top-ehrs">Top 5 Mental Health EHRs</a>
+                        <ul>
+                            <li class="numbered-item"><a href="#omnipractice">1. OmniPractice.ai</a></li>
+                            <li class="numbered-item"><a href="#therapynotes">2. TherapyNotes</a></li>
+                            <li class="numbered-item"><a href="#simplepractice">3. SimplePractice</a></li>
+                            <li class="numbered-item"><a href="#valant">4. Valant</a></li>
+                            <li class="numbered-item"><a href="#talkspace">5. Talkspace EHR</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#comparison">Comparison Table</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ul>
+                
+                <div class="social-share">
+                    <a href="#" class="social-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#666">
+                            <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#666">
+                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#666">
+                            <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Back Button -->
+            <a href="#" class="back-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                All posts
+            </a>
+            
+            <!-- Article Header -->
+            <header class="header">
+                <h1>Top 5 Mental Health EHRs of 2025</h1>
+                <div class="published-date">Published on April 9, 2025</div>
+                <img src="https://via.placeholder.com/1200x400?text=Mental+Health+EHR+Solutions" alt="Mental Health EHR Solutions" class="header-image">
+            </header>
+            
+            <!-- Article Content -->
+            <section id="introduction" class="section">
+                <h2>Introduction</h2>
+                <p>The mental health sector has seen unprecedented growth and transformation in recent years, driving the need for more sophisticated, specialized EHR systems. As practices expand and patient needs evolve, many providers are finding that traditional EHR solutions fall short in several critical areas:</p>
+                <ul>
+                    <li><strong>Specialized Documentation</strong>: Generic EHRs often lack mental health-specific templates and assessment tools.</li>
+                    <li><strong>Patient Engagement</strong>: Limited capabilities for remote monitoring and between-session support.</li>
+                    <li><strong>Outcome Tracking</strong>: Insufficient tools for measuring therapeutic progress and outcomes.</li>
+                    <li><strong>Regulatory Compliance</strong>: Challenges keeping up with evolving mental health privacy and documentation requirements.</li>
+                </ul>
+                <p>As we move through 2025, mental health providers need EHR systems specifically designed to address these challenges while improving operational efficiency and patient care.</p>
+            </section>
+            
+            <section id="summary" class="section">
+                <h2>60 Second Summary</h2>
+                <p><strong>Mental Health EHR Challenges</strong>: Generic documentation templates, limited patient engagement tools, inadequate outcome measurement capabilities, and complex compliance management have created frustration among mental health providers.</p>
+                
+                <h3>Key Features to Look For:</h3>
+                <ul>
+                    <li>Mental health-specific documentation templates and assessment tools</li>
+                    <li>Integrated telehealth with specialized features for therapeutic sessions</li>
+                    <li>Robust outcome measurement and progress tracking</li>
+                    <li>AI-powered documentation assistance</li>
+                    <li>Seamless insurance verification and billing specific to mental health codes</li>
+                    <li>HIPAA and mental health-specific regulatory compliance tools</li>
+                    <li>Patient engagement features between sessions</li>
+                </ul>
+                
+                <h3>Top 5 Mental Health EHRs Highlighted:</h3>
+                <ul>
+                    <li><strong>OmniPractice.ai</strong>: AI-powered documentation, specialized mental health templates, significant time savings, ideal for group practices (~$20/user/month).</li>
+                    <li><strong>TherapyNotes</strong>: Purpose-built for mental health with excellent clinical documentation features.</li>
+                    <li><strong>SimplePractice</strong>: User-friendly interface with strong telehealth integration for solo and small practices.</li>
+                    <li><strong>Valant</strong>: Robust outcome measurement tools and analytics specifically for behavioral health.</li>
+                    <li><strong>Talkspace EHR</strong>: Innovative patient engagement features and integrated care coordination.</li>
+                </ul>
+                
+                <p><strong>Final Thoughts</strong>: Selecting the right mental health-specific EHR can dramatically improve clinical workflows, enhance patient outcomes, and increase practice profitability through more efficient operations.</p>
+            </section>
+            
+            <section id="why-look" class="section">
+                <h2>Why Choose a Specialized Mental Health EHR?</h2>
+                <p>Mental health practices face unique challenges that general-purpose EHRs simply cannot address effectively. Here's why specialized solutions matter in 2025:</p>
+                <ul>
+                    <li><strong>Specialized Clinical Documentation</strong>: Mental health assessment tools, treatment planning, and progress notes require specific formats and terminology that generic systems lack.</li>
+                    <li><strong>Therapeutic Relationship Support</strong>: Purpose-built systems enhance the therapeutic alliance through better communication tools and patient engagement features.</li>
+                    <li><strong>Outcome-Based Care</strong>: Advanced tracking of therapeutic progress helps providers demonstrate effectiveness and adjust treatment plans accordingly.</li>
+                    <li><strong>Mental Health Compliance</strong>: Specialized systems are designed to handle the unique privacy requirements and documentation standards of behavioral health.</li>
+                    <li><strong>Improved Workflow Efficiency</strong>: Systems built for mental health practices reduce administrative burden, allowing clinicians to focus more time on patient care.</li>
+                </ul>
+                <p>These improvements can lead to a significant boost in productivity, reduced administrative burden, and ultimately, better patient care.</p>
+            </section>
+            
+            <section id="what-to-look" class="section">
+                <h2>What to Look for in a Mental Health EHR in 2025</h2>
+                <p>When evaluating modern mental health EHR systems, prioritize these essential features:</p>
+                <ul>
+                    <li><strong>AI-Powered Documentation</strong>: Look for systems that use artificial intelligence to reduce note-taking time while maintaining clinical quality.</li>
+                    <li><strong>Mental Health-Specific Templates</strong>: Pre-built and customizable templates for assessments, treatment plans, and progress notes tailored to various therapeutic modalities.</li>
+                    <li><strong>Integrated Telehealth</strong>: Seamless video session capabilities with features specifically designed for therapeutic conversations.</li>
+                    <li><strong>Outcome Measurement Tools</strong>: Built-in assessment instruments and tracking capabilities to monitor patient progress over time.</li>
+                    <li><strong>Patient Portal and Engagement</strong>: Secure messaging, homework assignments, and between-session resources to enhance treatment effectiveness.</li>
+                    <li><strong>Insurance and Billing Features</strong>: Specialized coding assistance and verification tools for mental health-specific billing requirements.</li>
+                    <li><strong>Group Practice Tools</strong>: Capabilities for supervision, practitioner collaboration, and multi-provider scheduling.</li>
+                </ul>
+            </section>
+            
+            <section id="top-ehrs" class="section">
+                <h2>The Top 5 Mental Health EHRs of 2025</h2>
+                
+                <div id="omnipractice" class="product">
+                    <h3>1. OmniPractice.ai</h3>
+                    <img src="https://via.placeholder.com/800x400?text=OmniPractice.ai+Dashboard" alt="OmniPractice.ai Dashboard" class="product-image">
+                    
+                    <p><strong>Overview</strong>:</p>
+                    <p>OmniPractice.ai has emerged as the leading AI-powered EHR specifically optimized for mental health group practices. Its innovative approach to reducing documentation time while enhancing clinical quality makes it particularly well-suited for busy mental health providers.</p>
+                    
+                    <h4>Key Features:</h4>
+                    <ul class="product-features">
+                        <li><strong>Mental Health AI Documentation</strong>: Reduces progress note writing time by 60% with specialized mental health terminology and therapeutic approaches.</li>
+                        <li><strong>Outcome Measurement Integration</strong>: Seamlessly incorporates standard assessment tools (PHQ-9, GAD-7, etc.) with automatic scoring and progress tracking.</li>
+                        <li><strong>Group Practice Management</strong>: Comprehensive tools for supervision, practitioner collaboration, and quality assurance.</li>
+                        <li><strong>Smart Insurance Verification</strong>: Real-time eligibility checks with 94% accuracy and automated claims processing for mental health-specific codes.</li>
+                        <li><strong>Customizable Mental Health Templates</strong>: Easily adaptable templates for various therapeutic modalities (CBT, DBT, psychodynamic, etc.).</li>
+                    </ul>
+                    
+                    <div class="advantages-limitations">
+                        <h4>Advantages:</h4>
+                        <ul class="nested-list">
+                            <li>Dramatic reduction in documentation time (saving 5-10 hours per clinician weekly).</li>
+                            <li>Specialized mental health workflows that align with actual clinical practice.</li>
+                            <li>Free migration from legacy systems with dedicated support.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="advantages-limitations">
+                        <h4>Limitations:</h4>
+                        <ul class="nested-list">
+                            <li>More robust features for group practices than solo practitioners.</li>
+                            <li>Some very specialized assessment tools may need to be manually integrated.</li>
+                        </ul>
+                    </div>
+                    
+                    <p><strong>Pricing</strong>:</p>
+                    <p>Competitive pricing starting at approximately <span class="price-emphasis">$20 per provider per month</span> with transparent pricing tiers and no hidden fees. Free trial and expert demo available.</p>
+                    
+                    <p><strong>User Reviews & Rating</strong>:</p>
+                    <p>Mental health practitioners particularly praise the AI documentation capabilities and time savings.</p>
+                    <p class="rating">Rating: 4.8/5</p>
+                </div>
+                
+                <div id="therapynotes" class="product">
+                    <h3>2. TherapyNotes</h3>
+                    <img src="https://via.placeholder.com/800x400?text=TherapyNotes+Dashboard" alt="TherapyNotes Dashboard" class="product-image">
+                    
+                    <p><strong>Overview</strong>:</p>
+                    <p>TherapyNotes continues to be a stalwart in the mental health EHR space, with a system purpose-built for psychologists, therapists, and counselors. Its long-standing focus on clinical documentation excellence makes it particularly strong for practitioners who prioritize detailed clinical notes.</p>
+                    
+                    <h4>Key Features:</h4>
+                    <ul class="product-features">
+                        <li><strong>Comprehensive Note Templates</strong>: Extensive library of mental health-specific templates for various treatment modalities.</li>
+                        <li><strong>Treatment Plan Integration</strong>: Seamless connection between diagnosis, goals, and progress notes.</li>
+                        <li><strong>Electronic Claims Submission</strong>: Specialized for mental health billing codes and insurance requirements.</li>
+                        <li><strong>Patient Portal</strong>: Secure document sharing and messaging capabilities.</li>
+                        <li><strong>Automated Appointment Reminders</strong>: Reduces no-shows and improves practice efficiency.</li>
+                    </ul>
+                    
+                    <div class="advantages-limitations">
+                        <h4>Advantages:</h4>
+                        <ul class="nested-list">
+                            <li>Intuitive clinical workflow specifically designed for mental health practice.</li>
+                            <li>Excellent customer support with mental health expertise.</li>
+                            <li>Strong security features and HIPAA compliance.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="advantages-limitations">
+                        <h4>Limitations:</h4>
+                        <ul class="nested-list">
+                            <li>More limited AI capabilities compared to newer platforms.</li>
+                            <li>Telehealth features not as fully integrated as some competitors.</li>
+                        </ul>
+                    </div>
+                    
+                    <p><strong>Pricing</strong>:</p>
+                    <p>Plans start at approximately <span class="price-emphasis">$49 per month</span> for solo practitioners, with additional fees for features like telehealth and electronic claims.</p>
+                    
+                    <p><strong>User Reviews & Rating</strong>:</p>
+                    <p>Consistently praised for its clinical focus and stability.</p>
+                    <p class="rating">Rating: 4.5/5</p>
+                </div>
+                
+                <div id="simplepractice" class="product">
+                    <h3>3. SimplePractice</h3>
+                    <img src="https://via.placeholder.com/800x400?text=SimplePractice+Dashboard" alt="SimplePractice Dashboard" class="product-image">
+                    
+                    <p><strong>Overview</strong>:</p>
+                    <p>SimplePractice remains a popular choice for solo and small mental health practices, offering an intuitive interface and strong telehealth capabilities. Its approach to simplifying practice management while maintaining clinical quality makes it accessible for practitioners at all tech levels.</p>
+                    
+                    <h4>Key Features:</h4>
+                    <ul class="product-features">
+                        <li><strong>Streamlined Interface</strong>: Clean, intuitive design minimizes training time and administrative burden.</li>
+                        <li><strong>Integrated Telehealth</strong>: Robust video platform specifically optimized for therapy sessions.</li>
+                        <li><strong>Client Portal and Mobile App</strong>: Enhanced patient engagement through secure messaging and form completion.</li>
+                        <li><strong>Insurance Eligibility Verification</strong>: Real-time checking capabilities for mental health benefits.</li>
+                        <li><strong>Custom Note Templates</strong>: Ability to create and share therapy-specific documentation templates.</li>
+                    </ul>
+                    
+                    <div class="advantages-limitations">
+                        <h4>Advantages:</h4>
+                        <ul class="nested-list">
+                            <li>Excellent user experience with minimal complexity.</li>
+                            <li>Strong mobile capabilities for on-the-go access.</li>
+                            <li>Comprehensive library of training resources.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="advantages-limitations">
+                        <h4>Limitations:</h4>
+                        <ul class="nested-list">
+                            <li>Less robust for larger group practices with complex workflows.</li>
+                            <li>More limited reporting and analytics capabilities.</li>
+                        </ul>
+                    </div>
+                    
+                    <p><strong>Pricing</strong>:</p>
+                    <p>Starts at approximately <span class="price-emphasis">$59 per month</span> per clinician, with tiered pricing for additional features.</p>
+                    
+                    <p><strong>User Reviews & Rating</strong>:</p>
+                    <p>Highly regarded for ease of use and telehealth capabilities.</p>
+                    <p class="rating">Rating: 4.4/5</p>
+                </div>
+                
+                <div id="valant" class="product">
+                    <h3>4. Valant</h3>
+                    <img src="https://via.placeholder.com/800x400?text=Valant+Dashboard" alt="Valant Dashboard" class="product-image">
+                    
+                    <p><strong>Overview</strong>:</p>
+                    <p>Valant offers a comprehensive behavioral health platform with particularly strong capabilities in outcome measurement and reporting. Its focus on data-driven care makes it an excellent choice for practices that prioritize measurement-based treatment approaches.</p>
+                    
+                    <h4>Key Features:</h4>
+                    <ul class="product-features">
+                        <li><strong>Advanced Outcome Measurement</strong>: Integrated assessment tools with sophisticated tracking and reporting.</li>
+                        <li><strong>Clinical Decision Support</strong>: Evidence-based guidance for treatment planning based on assessment results.</li>
+                        <li><strong>Comprehensive Reporting</strong>: Detailed analytics for clinical outcomes and practice performance.</li>
+                        <li><strong>Regulatory Compliance Tools</strong>: Features specifically designed for mental health documentation requirements.</li>
+                        <li><strong>Integrated E-Prescribing</strong>: Medication management capabilities for psychiatry practices.</li>
+                    </ul>
+                    
+                    <div class="advantages-limitations">
+                        <h4>Advantages:</h4>
+                        <ul class="nested-list">
+                            <li>Superior analytics and outcome tracking capabilities.</li>
+                            <li>Strong support for evidence-based practice workflows.</li>
+                            <li>Comprehensive solution for practices that include medication management.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="advantages-limitations">
+                        <h4>Limitations:</h4>
+                        <ul class="nested-list">
+                            <li>Steeper learning curve than some competitors.</li>
+                            <li>Higher price point with more complex implementation process.</li>
+                        </ul>
+                    </div>
+                    
+                    <p><strong>Pricing</strong>:</p>
+                    <p>Custom pricing based on practice size and feature requirements, typically starting in the higher range for comprehensive implementations.</p>
+                    
+                    <p><strong>User Reviews & Rating</strong>:</p>
+                    <p>Valued for its robust clinical capabilities and data-driven approach.</p>
+                    <p class="rating">Rating: 4.2/5</p>
+                </div>
+                
+                <div id="talkspace" class="product">
+                    <h3>5. Talkspace EHR</h3>
+                    <img src="https://via.placeholder.com/800x400?text=Talkspace+EHR+Dashboard" alt="Talkspace EHR Dashboard" class="product-image">
+                    
+                    <p><strong>Overview</strong>:</p>
+                    <p>A relative newcomer to the standalone EHR market, Talkspace EHR has emerged from the company's extensive experience in digital mental health delivery. Its innovative approach to patient engagement between sessions makes it particularly compelling for practices focusing on continuous care models.</p>
+                    
+                    <h4>Key Features:</h4>
+                    <ul class="product-features">
+                        <li><strong>Enhanced Patient Engagement</strong>: Secure messaging, media sharing, and homework capabilities between sessions.</li>
+                        <li><strong>Specialized Telehealth</strong>: Video platform designed specifically for therapeutic conversations.</li>
+                        <li><strong>Mood and Progress Tracking</strong>: Patient self-reporting tools that integrate with clinical documentation.</li>
+                        <li><strong>Collaborative Care Coordination</strong>: Tools for connecting with other providers in a patient's care team.</li>
+                        <li><strong>Modern Mobile Experience</strong>: Superior app interface for both clinicians and patients.</li>
+                    </ul>
+                    
+                    <div class="advantages-limitations">
+                        <h4>Advantages:</h4>
+                        <ul class="nested-list">
+                            <li>Leading-edge patient engagement capabilities.</li>
+                            <li>Excellent user experience for both providers and patients.</li>
+                            <li>Strong support for between-session therapeutic work.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="advantages-limitations">
+                        <h4>Limitations:</h4>
+                        <ul class="nested-list">
+                            <li>Less established than some competitors in the traditional EHR space.</li>
+                            <li>Billing and administrative features not as robust as clinical capabilities.</li>
+                        </ul>
+                    </div>
+                    
+                    <p><strong>Pricing</strong>:</p>
+                    <p>Subscription model with tiered pricing based on features utilized, starting at approximately <span class="price-emphasis">$65 per provider per month</span>.</p>
+                    
+                    <p><strong>User Reviews & Rating</strong>:</p>
+                    <p>Praised for innovation in patient engagement and modern interface.</p>
+                    <p class="rating">Rating: 4.3/5</p>
+                </div>
+            </section>
+            
+            <section id="comparison" class="section">
+                <h2>Comparison Table: Mental Health EHR Features</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>OmniPractice.ai</th>
+                            <th>TherapyNotes</th>
+                            <th>SimplePractice</th>
+                            <th>Valant</th>
+                            <th>Talkspace EHR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AI Documentation</td>
+                            <td>★★★★★</td>
+                            <td>★★★</td>
+                            <td>★★★</td>
+                            <td>★★★★</td>
+                            <td>★★★★</td>
+                        </tr>
+                        <tr>
+                            <td>Mental Health Templates</td>
+                            <td>★★★★★</td>
+                            <td>★★★★★</td>
+                            <td>★★★★</td>
+                            <td>★★★★</td>
+                            <td>★★★★</td>
+                        </tr>
+                        <tr>
+                            <td>Telehealth Integration</td>
+                            <td>★★★★</td>
+                            <td>★★★</td>
+                            <td>★★★★★</td>
+                            <td>★★★</td>
+                            <td>★★★★★</td>
+                        </tr>
+                        <tr>
+                            <td>Outcome Measurement</td>
+                            <td>★★★★★</td>
+                            <td>★★★★</td>
+                            <td>★★★</td>
+                            <td>★★★★★</td>
+                            <td>★★★★</td>
+                        </tr>
+                        <tr>
+                            <td>Patient Engagement</td>
+                            <td>★★★★</td>
+                            <td>★★★</td>
+                            <td>★★★★</td>
+                            <td>★★★</td>
+                            <td>★★★★★</td>
+                        </tr>
+                        <tr>
+                            <td>Insurance/Billing</td>
+                            <td>★★★★★</td>
+                            <td>★★★★</td>
+                            <td>★★★★</td>
+                            <td>★★★★</td>
+                            <td>★★★</td>
+                        </tr>
+                        <tr>
+                            <td>Group Practice Tools</td>
+                            <td>★★★★★</td>
+                            <td>★★★★</td>
+                            <td>★★★</td>
+                            <td>★★★★</td>
+                            <td>★★★</td>
+                        </tr>
+                        <tr>
+                            <td>Pricing Value</td>
+                            <td>★★★★★</td>
+                            <td>★★★★</td>
+                            <td>★★★★</td>
+                            <td>★★★</td>
+                            <td>★★★</td>
+                        </tr>
+                        <tr>
+                            <td>Ease of Implementation</td>
+                            <td>★★★★</td>
+                            <td>★★★★</td>
+                            <td>★★★★★</td>
+                            <td>★★★</td>
+                            <td>★★★★</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section id="conclusion" class="section">
+                <h2>Conclusion</h2>
+                <p>As mental health practices continue to evolve in 2025, selecting the right specialized EHR becomes increasingly critical to both clinical outcomes and operational success. The systems highlighted above represent the leading edge of mental health technology, each with distinct strengths for different practice types.</p>
+                <p>OmniPractice.ai stands out particularly for group practices seeking significant time savings through AI-powered documentation, while maintaining clinical quality and enhancing outcome measurement. Its specialized mental health workflows and competitive pricing make it an excellent value proposition for growing practices.</p>
+                <p>Whether you choose OmniPractice.ai or another option from this list, the key is selecting a system that aligns with your specific practice model, therapeutic approach, and growth plans. Take advantage of free trials and demos to experience firsthand how these specialized systems can transform your mental health practice.</p>
+                <p>Learn more about OmniPractice.ai's innovative mental health EHR solution <a href="https://www.omnipractice.ai/">here</a>.</p>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Chat Icon -->
+    <div class="chat-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 1c-6.627 0-12 4.364-12 9.749 0 3.131 1.817 5.917 4.64 7.7.868 2.167-1.083 4.008-3.142 4.503 2.271.195 6.311-.121 9.374-2.498 7.095.538 13.128-3.997 13.128-9.705 0-5.385-5.373-9.749-12-9.749z"/>
+        </svg>
+    </div>
+</body>
+</html>
